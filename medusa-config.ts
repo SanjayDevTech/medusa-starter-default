@@ -46,13 +46,19 @@ module.exports = defineConfig({
       options: {
         providers: [
           ...(MINIO_ENDPOINT && MINIO_ACCESS_KEY && MINIO_SECRET_KEY ? [{
-            resolve: 'medusa-file-minio',
-            id: 'minio',
+            resolve: '@medusajs/file-s3',
+            id: 's3',
             options: {
               endPoint: MINIO_ENDPOINT,
               access_key_id: MINIO_ACCESS_KEY,
               secret_access_key: MINIO_SECRET_KEY,
-              bucket: MINIO_BUCKET
+              // This is required for Minio
+              region: 'us-east-1',
+              bucket: MINIO_BUCKET,
+              additional_client_config: {
+                // This is required for Minio
+                forcePathStyle: true,
+              },
             }
           }] : [{
             resolve: '@medusajs/file-local',
