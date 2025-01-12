@@ -71,6 +71,22 @@ module.exports = defineConfig({
         ]
       }
     },
+    ...(REDIS_URL ? [{
+      key: Modules.EVENT_BUS,
+      resolve: '@medusajs/event-bus-redis',
+      options: {
+        redisUrl: REDIS_URL
+      }
+    },
+    {
+      key: Modules.WORKFLOW_ENGINE,
+      resolve: '@medusajs/workflow-engine-redis',
+      options: {
+        redis: {
+          url: REDIS_URL,
+        }
+      }
+    }] : []),
     ...(SENDGRID_API_KEY && SENDGRID_FROM_EMAIL ? [{
       key: Modules.NOTIFICATION,
       resolve: '@medusajs/notification',
