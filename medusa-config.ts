@@ -121,7 +121,7 @@ module.exports = defineConfig({
       },
     }] : []),
     ...(MEILISEARCH_HOST && MEILISEARCH_API_KEY ? [{
-      resolve: 'medusa-plugin-meilisearch',
+      resolve: '@rokmohar/medusa-plugin-meilisearch',
       options: {
         config: {
           host: MEILISEARCH_HOST,

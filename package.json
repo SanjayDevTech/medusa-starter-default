@@ -32,9 +32,9 @@
     "@mikro-orm/knex": "5.9.7",
     "@mikro-orm/migrations": "5.9.7",
     "@mikro-orm/postgresql": "5.9.7",
+    "@rokmohar/medusa-plugin-meilisearch": "^0.2.1",
     "awilix": "^8.0.1",
     "bootstrap": "file:./bootstrap",
-    "medusa-plugin-meilisearch": "^2.0.11",
     "pg": "^8.13.0"
   },
   "devDependencies": {
