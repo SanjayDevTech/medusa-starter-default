@@ -1,0 +1,15 @@
+{
+  "name": "bootstrap",
+  "version": "1.0.0",
+  "main": "init-db.js",
+  "bin": {
+    "init-db": "bin/init-db.js"
+  },
+  "scripts": {
+    
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
