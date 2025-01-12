@@ -11,8 +11,8 @@ const client = new Client({
 const checkIfSeeded = async () => {
   try {
     await client.connect();
-    await client.query('SELECT 1 FROM "user" LIMIT 1;');
-    return true;
+    const user = await client.query('SELECT 1 FROM "user" LIMIT 1;');
+    return user.rows.length > 0;
   } catch (error) {
     if (error.message.includes('relation "user" does not exist')) {
       return false;
@@ -43,12 +43,6 @@ const runCommand = (command) => {
 
 const seedDatabase = async () => {
   try {
-    console.log('Running migrations...');
-    await runCommand('npx medusa db:migrate');
-    
-    console.log('Running link sync...');
-    await runCommand('npx medusa db:sync-links');
-    
     console.log('Running seed script...');
     await runCommand('yarn seed');
     
@@ -69,6 +63,11 @@ const seedDatabase = async () => {
 };
 
 const seedOnce = async () => {
+  console.log('Running migrations...');
+  await runCommand('npx medusa db:migrate');
+  
+  console.log('Running link sync...');
+  await runCommand('npx medusa db:sync-links');
   const isSeeded = await checkIfSeeded();
   if (!isSeeded) {
     console.log('Database is not seeded. Seeding now...');
