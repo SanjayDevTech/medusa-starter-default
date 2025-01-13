@@ -65,9 +65,7 @@ const seedDatabase = async () => {
 const seedOnce = async () => {
   console.log('Running migrations...');
   await runCommand('npx medusa db:migrate');
-  
-  console.log('Running link sync...');
-  await runCommand('npx medusa db:sync-links');
+  console.log("Checking if database is seeded...");
   const isSeeded = await checkIfSeeded();
   if (!isSeeded) {
     console.log('Database is not seeded. Seeding now...');
