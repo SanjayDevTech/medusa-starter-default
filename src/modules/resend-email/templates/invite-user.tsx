@@ -2,11 +2,6 @@ import { Button, Link, Section, Text, Img, Hr } from '@react-email/components'
 import Base from './base'
 
 /**
- * The key for the InviteUserEmail template, used to identify it
- */
-export const INVITE_USER_TEMPLATE = 'invite-user'
-
-/**
  * The props for the InviteUserEmail template
  */
 export interface InviteUserEmailProps {

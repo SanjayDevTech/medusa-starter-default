@@ -1,11 +1,11 @@
 import { ReactNode } from 'react'
 import { MedusaError } from '@medusajs/utils'
-import { INVITE_USER_TEMPLATE, inviteUserEmail } from './invite-user'
-import { ORDER_PLACED_TEMPLATE, orderPlacedEmail } from './order-placed'
+import { inviteUserEmail } from './invite-user'
+import { orderPlacedEmail } from './order-placed'
 
 export enum EmailTemplate {
-  INVITE_USER = INVITE_USER_TEMPLATE,
-  ORDER_PLACED = ORDER_PLACED_TEMPLATE,
+  INVITE_USER = "invite-user",
+  ORDER_PLACED = "order-placed",
 };
 
 export function generateEmailTemplate(templateKey: EmailTemplate): (data: unknown) => ReactNode {

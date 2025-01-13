@@ -2,8 +2,6 @@ import { Text, Section, Hr } from "@react-email/components"
 import { OrderAddressDTO, OrderDTO } from "@medusajs/framework/types"
 import Base from "./base";
 
-export const ORDER_PLACED_TEMPLATE = 'order-placed'
-
 interface OrderPlacedPreviewProps {
   order: OrderDTO & { display_id: string; summary: { raw_current_order_total: { value: number } } }
   shippingAddress: OrderAddressDTO

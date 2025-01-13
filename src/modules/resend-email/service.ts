@@ -62,7 +62,7 @@ class ResendNotificationProviderService extends AbstractNotificationProviderServ
     if (this.options.html_templates?.[template]) {
       return this.options.html_templates[template].content
     }
-    const allowedTemplates = Object.keys(EmailTemplate)
+    const allowedTemplates = Object.values(EmailTemplate)
 
     if (!allowedTemplates.includes(template)) {
       return null
