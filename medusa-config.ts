@@ -140,6 +140,14 @@ module.exports = defineConfig({
               displayedAttributes: ['title', 'description', 'variant_sku', 'thumbnail', 'handle']
             },
             primaryKey: 'id',
+            transformer: (item) => ({
+              id: item.id,
+              variant_sku: item.variant_sku,
+              title: item.title,
+              handle: item.handle,
+              thumbnail: item.thumbnail,
+              description: item.description,
+            }),
           }
         }
       }
