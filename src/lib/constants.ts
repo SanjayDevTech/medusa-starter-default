@@ -76,10 +76,10 @@ export const MINIO_SECRET_KEY = process.env.MINIO_SECRET_KEY;
 export const MINIO_BUCKET = process.env.MINIO_BUCKET ?? "medusa-media";
 
 /**
- * (optionl) SendGrid API Key and from Email
+ * (optionl) Resend API Key and from Email
  */
-export const SENDGRID_API_KEY = process.env.SENDGRID_API_KEY;
-export const SENDGRID_FROM_EMAIL = process.env.SENDGRID_FROM_EMAIL;
+export const RESEND_API_KEY = process.env.RESEND_API_KEY;
+export const RESEND_FROM_EMAIL = process.env.RESEND_FROM_EMAIL;
 
 /**
  * (optional) Stripe API key and webhook secret
