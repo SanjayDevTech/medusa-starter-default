@@ -49,7 +49,8 @@ module.exports = defineConfig({
             resolve: '@medusajs/file-s3',
             id: 's3',
             options: {
-              endPoint: MINIO_ENDPOINT,
+              file_url: `https://${MINIO_ENDPOINT}/${MINIO_BUCKET}`,
+              endpoint: `https://${MINIO_ENDPOINT}`,
               access_key_id: MINIO_ACCESS_KEY,
               secret_access_key: MINIO_SECRET_KEY,
               // This is required for Minio
